@@ -3,16 +3,23 @@
     "build": {
         "dockerfile": "Dockerfile"
     },
-    "settings": {
-        "terminal.integrated.shell.linux": "/bin/bash"
-    },
     "postCreateCommand": "./setup.sh",
-    "remoteUser": "vscode",
-    "extensions": [
-        "ms-python.python"
-    ],
+    "remoteUser": "vscode", // Adjust this if necessary
+    "customizations": {
+        "vscode": {
+            "settings": {
+                "terminal.integrated.shell.linux": "/bin/bash"
+            },
+            "extensions": [
+                "ms-python.python",
+                "ms-azuretools.vscode-docker"
+            ]
+        }
+    },
     "runArgs": [
-        "--gpus",
-        "all"
+        "--gpus", "all",
+        "--ipc=host",
+        "--ulimit", "memlock=-1",
+        "--ulimit", "stack=67108864"
     ]
 }

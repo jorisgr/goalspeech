@@ -13,20 +13,31 @@ pip3 install \
     tqdm \
     fastdtw
 
-# Set up VocalTractLab
 mkdir -p libs
-cd libs
-wget http://vocaltractlab.de/download-vocaltractlabapi/VTL2.1_Linux.zip
-wget http://vocaltractlab.de/download-vocaltractlabapi/vtlapi-2.1b.zip
-unzip VTL2.1_Linux.zip -d VTL2.1_Linux
-unzip vtlapi-2.1b.zip -d vtlapi-2.1b
-cd ..
 
+# Set up VocalTractLab
+if [ ! -d "libs/VTL2.1_Linux" ]; then
+    cd libs
+    wget http://vocaltractlab.de/download-vocaltractlabapi/VTL2.1_Linux.zip
+    unzip -o VTL2.1_Linux.zip -d VTL2.1_Linux
+    rm VTL2.1_Linux.zip
+    cd ..
+fi
+
+if [ ! -d "libs/vtlapi-2.1b" ]; then
+    cd libs
+    wget http://vocaltractlab.de/download-vocaltractlabapi/vtlapi-2.1b.zip
+    unzip -o vtlapi-2.1b.zip -d vtlapi-2.1b
+    rm vtlapi-2.1b.zip
+    cd ..
+fi
 
 # Set up GBFB features
-cd libs
-git clone https://github.com/m-r-s/reference-feature-extraction
-cd ..
+if [ ! -d "libs/reference-feature-extraction" ]; then
+   cd libs
+    git clone https://github.com/m-r-s/reference-feature-extraction
+    cd ..
+fi
 
 # Set up environment variable for Praat
 echo 'export PRAAT_CMD=/usr/bin/praat' >> ~/.bashrc

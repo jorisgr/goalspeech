@@ -1,0 +1,16 @@
+# Ignore Python bytecode files
+__pycache__/
+*.pyc
+
+# Ignore environment directories
+env/
+venv/
+
+# Ignore libs directory
+libs/
+
+# Ignore other common files and directories
+.DS_Store
+*.log
+*.tmp
+node_modules/
