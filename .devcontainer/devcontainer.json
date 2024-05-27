@@ -1,7 +1,12 @@
 {
     "name": "Goalspeech Dev Container",
     "build": {
-        "dockerfile": "Dockerfile"
+        "dockerfile": "Dockerfile",
+        "args": {
+            "USERNAME": "vscode"
+            "USER_UID": "1002",
+            "USER_GID": "1000"
+        }
     },
     "postCreateCommand": "./setup.sh",
     "remoteUser": "vscode", // Adjust this if necessary
