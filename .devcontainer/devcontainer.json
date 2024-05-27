@@ -2,14 +2,18 @@
     "name": "Goalspeech Dev Container",
     "build": {
         "dockerfile": "Dockerfile",
-        "args": {
-            "USERNAME": "vscode"
-            "USER_UID": "1002",
-            "USER_GID": "1000"
-        }
+        "context": ".."
+    },
+    "features": {
+        "ghcr.io/devcontainers/features/nvidia-cuda:1": {
+          "installCudnn": true,
+          "cudaVersion": "12.1",
+          "cudnnVersion": "8.9.3.28"
+        },
+        "ghcr.io/raucha/devcontainer-features/pytorch:latest": {}
     },
     "postCreateCommand": "./setup.sh",
-    "remoteUser": "vscode", // Adjust this if necessary
+    "remoteUser": "vscode",
     "customizations": {
         "vscode": {
             "settings": {
@@ -26,5 +30,8 @@
         "--ipc=host",
         "--ulimit", "memlock=-1",
         "--ulimit", "stack=67108864"
-    ]
+    ],
+    "hostRequirements": {
+        "gpu": "optional" 
+      }
 }
