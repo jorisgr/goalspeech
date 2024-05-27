@@ -12,7 +12,7 @@ RUN apt-get update && apt-get install -y \
     && rm -rf /var/lib/apt/lists/*
 
 # Install Praat
-RUN wget https://www.fon.hum.uva.nl/praat/praat6108_linux64.tar.gz \
+RUN wget https://github.com/praat/praat/releases/download/v6.1.08/praat6108_linux64.tar.gz \
     && tar -xzf praat6108_linux64.tar.gz \
     && mv praat_linux64/praat /usr/bin/praat \
     && rm -rf praat_linux64 praat6108_linux64.tar.gz
