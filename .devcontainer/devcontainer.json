@@ -30,6 +30,8 @@
         "--ipc=host",
         "--ulimit", "memlock=-1",
         "--ulimit", "stack=67108864"
+        // specify the container name
+        "--name", "${localEnv:USER}_goalspeech_devcontainer"
     ],
     "hostRequirements": {
         "gpu": "optional" 
