@@ -159,8 +159,8 @@ class VTLSpeechProduction:
         duration_s = 1.0;
         numFrames = round(duration_s * self.arSamplingRate);
 
-        tractParams = np.zeros(shape = (numFrames, self.numVocalTractParams), dtype = np.float)
-        glottisParams = np.zeros(shape = (numFrames, self.numGlottisParams), dtype = np.float)
+        tractParams = np.zeros(shape = (numFrames, self.numVocalTractParams), dtype = float)
+        glottisParams = np.zeros(shape = (numFrames, self.numGlottisParams), dtype = float)
 
         # Create the vocal tract shapes that slowly change from /a/ to /i/ from the
         # first to the last frame.
@@ -240,7 +240,7 @@ class VTLSpeechProduction:
         if failure != 0:
             raise ValueError("Error in vtlSynthBlock! Errorcode: %i" % failure)
 
-        copiedAudio = np.zeros(shape=(len(audio),1), dtype=np.float)
+        copiedAudio = np.zeros(shape=(len(audio),1), dtype=float)
         for i in range(0, len(audio)):
             copiedAudio[i] = audio[i]
 
