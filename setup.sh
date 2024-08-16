@@ -1,17 +1,17 @@
 #!/bin/bash
 
-# Install Python packages
-pip3 install \
-    dtw==1.4.0 \
-    matplotlib \
-    numpy \
-    python-speech-features \
-    scipy \
-    scikit-learn \
-    sounddevice \
-    oct2py \
-    tqdm \
-    fastdtw
+# # Install Python packages
+# pip3 install \
+#     dtw==1.4.0 \
+#     matplotlib \
+#     numpy \
+#     python-speech-features \
+#     scipy \
+#     scikit-learn \
+#     sounddevice \
+#     oct2py \
+#     tqdm \
+#     fastdtw
 
 mkdir -p libs
 
