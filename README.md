@@ -1,3 +1,6 @@
+Open this repo in an environment (e.g. VSCode) that can handle devcontainers and it should build the environment automatically. 
+
+
 # GoALSpeech: Goal-directed Articulatory Learning for Speech Acquisition #
 
 Source code for replicating the results of the following paper:
