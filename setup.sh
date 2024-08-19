@@ -41,6 +41,18 @@ fi
 
 # Set up environment variable for Praat
 echo 'export PRAAT_CMD=/usr/bin/praat' >> ~/.bashrc
+
+# set up XDG_RUNTIME_DIR
+sudo mkdir /run/user/$UID
+sudo chown -R $USER:$USER /run/user/$UID
+echo "export XDG_RUNTIME_DIR=/run/user/$UID" >> ~/.bashrc
+
+# Increase node.js memory limit for remote configuration to prevent PyLance 
+# from crashing according to 
+# https://github.com/microsoft/pylance-release/blob/main/TROUBLESHOOTING.md#pylance-is-crashing
+echo 'export NODE_OPTIONS="--max-old-space-size=8192"' >> ~/.bashrc
+
+
 source ~/.bashrc
 
 echo "Setup complete."

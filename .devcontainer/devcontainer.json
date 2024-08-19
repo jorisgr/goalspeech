@@ -5,12 +5,14 @@
         "context": ".."
     },
     "features": {
-        "ghcr.io/devcontainers/features/nvidia-cuda:1": {
-          "installCudnn": true,
-          "cudaVersion": "12.1",
-          "cudnnVersion": "8.9.3.28"
-        },
-        "ghcr.io/raucha/devcontainer-features/pytorch:latest": {}
+        "ghcr.io/devcontainers/features/nvidia-cuda:1": {},
+        
+        //"ghcr.io/raucha/devcontainer-features/pytorch:latest": {},
+        "ghcr.io/raucha/devcontainer-features/pytorch:1": {},
+        // add node.js feature if needed to keep Pylance happy from crashing as suggested by
+        // https://github.com/microsoft/pylance-release/blob/main/TROUBLESHOOTING.md#pylance-is-crashing
+        "ghcr.io/devcontainers/features/node:1": {}, 
+        
     },
     "postCreateCommand": "./setup.sh",
     "remoteUser": "vscode",
@@ -26,8 +28,12 @@
             ]
         }
     },
-    "remoteEnv": {
-        "XDG_RUNTIME_DIR": "/run/user/$(id -u)",
+    // Set variable ${XDG_RUNTIME_DIR} to /run/user/$UID to avoid permission issues
+            
+
+
+    "containerEnv": {
+        "XDG_RUNTIME_DIR": "/run/user/$]",
     },
     "runArgs": [
         "--gpus", "all",
