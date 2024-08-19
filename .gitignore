@@ -14,4 +14,4 @@ libs/
 *.log
 *.tmp
 node_modules/
-data/ambientSpeech/vtl-2.1/arData-aeiou@-100-0.1-0.1-0.1-0.1-0.1-0.1-0.01-0.01-0.01-0.01-0.01-0.01-0.01-0.01-0.01-0.01-0.01-0.01.mat
+data/ambientSpeech/vtl-2.1/arData-*.mat
