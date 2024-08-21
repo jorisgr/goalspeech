@@ -11,7 +11,9 @@
         "ghcr.io/raucha/devcontainer-features/pytorch:1": {},
         // add node.js feature if needed to keep Pylance happy from crashing as suggested by
         // https://github.com/microsoft/pylance-release/blob/main/TROUBLESHOOTING.md#pylance-is-crashing
-        "ghcr.io/devcontainers/features/node:1": {}, 
+        "ghcr.io/devcontainers/features/node:1": {
+            "nodeVersion": "20.16.0" //defined so that it matches the version specified below in settings
+        }
         
     },
     "postCreateCommand": "./setup.sh",
@@ -19,7 +21,10 @@
     "customizations": {
         "vscode": {
             "settings": {
-                "terminal.integrated.shell.linux": "/bin/bash"
+                "terminal.integrated.shell.linux": "/bin/bash",
+                // this should point to the version that is installed in the container
+                "python.analysis.nodeExecutable": "/usr/local/share/nvm/versions/node/v20.16.0/bin/node",
+                "notebook.output.textLineLimit": 5000
             },
             "extensions": [
                 "ms-python.python",
@@ -46,4 +51,5 @@
     "hostRequirements": {
         "gpu": "optional" 
       }
+    "shutdownAction": "none"
 }
