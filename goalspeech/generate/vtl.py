@@ -4,7 +4,7 @@ import numpy as np       # for array operations
 import os                # for retrieving path names
 import scipy.io.wavfile  # for writing wav file
 import sounddevice as sd # for playing back audio
-from tqdm import tqdm    # progress bar for sound production
+from tqdm.notebook import tqdm    # progress bar for sound production
 
 class VTLSpeechProduction:
 
