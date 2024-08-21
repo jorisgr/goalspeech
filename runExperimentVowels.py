@@ -15,6 +15,10 @@ from goalspeech.experiment import save_experiment
 
 import goalspeech.config
 
+file = "initExperimentVowels.py"
+
+exec(compile(open(file).read(), file, 'exec'))
+
 picture_file_format = ".png"
 
 # articulatory data as shapes, realized as 500~ms long vowels
