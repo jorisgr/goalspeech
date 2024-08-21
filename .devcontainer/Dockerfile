@@ -9,12 +9,15 @@ RUN apt-get update && apt-get install -y \
     python3-tk \
     libportaudio2 \
     octave \
+    libpulse-dev \ # For praat
+    libgtk2.0-dev \ # For praat
     && rm -rf /var/lib/apt/lists/* \
     # Install Praat
     && wget https://github.com/praat/praat/releases/download/v6.1.08/praat6108_linux64.tar.gz \
     && tar -xzf praat6108_linux64.tar.gz \
     && mv praat /usr/bin/praat \
     && rm -rf praat6108_linux64.tar.gz \
+    # Install Python dependencies
     && pip3 install \
         dtw==1.4.0 \
         matplotlib \

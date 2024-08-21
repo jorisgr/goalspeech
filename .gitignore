@@ -15,3 +15,4 @@ libs/
 *.tmp
 node_modules/
 data/ambientSpeech/vtl-2.1/arData-*.mat
+data/ambientSpeech/vtl-2.1/features-*.mat

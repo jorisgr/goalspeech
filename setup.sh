@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# # Install Python packages
+# # Install Python packages ## Moved to Dockerfile
 # pip3 install \
 #     dtw==1.4.0 \
 #     matplotlib \
