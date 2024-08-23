@@ -5,25 +5,26 @@
         "context": ".."
     },
     "features": {
-        "ghcr.io/devcontainers/features/nvidia-cuda:1": {},
-        
+        // Not useful anymore, as the base image already has it
+        //"ghcr.io/devcontainers/features/nvidia-cuda:1": {},
         //"ghcr.io/raucha/devcontainer-features/pytorch:latest": {},
-        "ghcr.io/raucha/devcontainer-features/pytorch:1": {},
+        // "ghcr.io/raucha/devcontainer-features/pytorch:1": {},
+        
         // add node.js feature if needed to keep Pylance happy from crashing as suggested by
         // https://github.com/microsoft/pylance-release/blob/main/TROUBLESHOOTING.md#pylance-is-crashing
         "ghcr.io/devcontainers/features/node:1": {
-            "nodeVersion": "20.16.0" //defined so that it matches the version specified below in settings
+            "version": "20.17.0" //defined so that it matches the version specified below in settings
         }
         
     },
     "postCreateCommand": "./setup.sh",
-    "remoteUser": "vscode",
+    // "remoteUser": "vscode",
     "customizations": {
         "vscode": {
             "settings": {
                 "terminal.integrated.shell.linux": "/bin/bash",
                 // this should point to the version that is installed in the container
-                "python.analysis.nodeExecutable": "/usr/local/share/nvm/versions/node/v20.16.0/bin/node",
+                "python.analysis.nodeExecutable": "/usr/local/share/nvm/versions/node/v20.17.0/bin/node",
                 "notebook.output.textLineLimit": 5000
             },
             "extensions": [
@@ -34,9 +35,6 @@
         }
     },
     // Set variable ${XDG_RUNTIME_DIR} to /run/user/$UID to avoid permission issues
-            
-
-
     "containerEnv": {
         "XDG_RUNTIME_DIR": "/run/user/$]",
     },
@@ -50,6 +48,6 @@
     ],
     "hostRequirements": {
         "gpu": "optional" 
-      }
+      },
     "shutdownAction": "none"
 }

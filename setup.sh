@@ -52,7 +52,11 @@ echo "export XDG_RUNTIME_DIR=/run/user/$UID" >> ~/.bashrc
 # https://github.com/microsoft/pylance-release/blob/main/TROUBLESHOOTING.md#pylance-is-crashing
 echo 'export NODE_OPTIONS="--max-old-space-size=8192"' >> ~/.bashrc
 
-
 source ~/.bashrc
+
+# # get rid of the annoying warning message
+# # see https://github.com/sudo-project/sudo/issues/42#issuecomment-609079906
+# sudo touch /etc/sudo.conf
+# sudo echo "Set disable_coredump false" >> /etc/sudo.conf
 
 echo "Setup complete."
