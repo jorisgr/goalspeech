@@ -9,6 +9,9 @@ venv/
 # Ignore libs directory
 libs/
 
+# Ignore the results directory
+data/results/
+
 # Ignore other common files and directories
 .DS_Store
 *.log
